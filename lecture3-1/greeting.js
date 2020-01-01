@@ -38,6 +38,16 @@ function loadName(){
     }
 }
 
+function loadToDos() {
+    const loadedToDos = localStorage.getItem(TODOS_LS);
+    if(loadedToDos !== null) {
+        const parsedToDos = JSON.parse(loadedToDos); // parse string to object
+        parsedToDos.forEach(function(toDo){
+            console.log(toDo.text);
+        })
+    }
+}
+
 function init() {
     loadName();
 }
